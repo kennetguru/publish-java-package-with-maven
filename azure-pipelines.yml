@@ -5,6 +5,18 @@ pool:
   vmImage: default
 
 steps:
+- task: Maven@4
+  inputs:
+    azureSubscription: 'Azure subscription 1(e8b93ab3-952b-4a37-89f3-92a8af0791fb)'
+    mavenPomFile: 'pom.xml'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: true
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: true
+    sqMavenPluginVersionChoice: 'pom'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
