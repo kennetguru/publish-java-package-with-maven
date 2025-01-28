@@ -1,6 +1,6 @@
 name: sonar cloud scan
 uses: /.github/workflows/main.yml
-  with:
+  with: |
     go-version: 5.3.0
     go-version-file: go.work file.
     check-latest: true
