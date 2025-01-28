@@ -6,6 +6,6 @@ with:
     check-latest: true
     token: ${{ github.server_url == 'https://github.com' && github.token || '' }}
     cache: true
-    cache-dependency-path: - go.sum
+    cache-dependency-path: go.work file.
     architecture: x64
           
