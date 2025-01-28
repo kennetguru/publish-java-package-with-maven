@@ -1,6 +1,14 @@
-name: sonar cloud scan
-uses: /.github/workflows/main.yml
+name: sonar_cloud_scan_GitHub_action
+on:
+  workflow_dispatch:
+
+jobs:
+  sonarcloudscan:
+    runs on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5.3.0
 with:
+    fetch depht:
     go-version: 5.3.0
     go-version-file: go.work file.
     check-latest: true
